@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Arma 3 Scripts by LeeCooper6</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Arma 3 Scripts</h1>
+          <h2>Arma 3 scripts for non-programmer players.</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/LeeCooper6/Arma-Scripts/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/LeeCooper6/Arma-Scripts/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/LeeCooper6/Arma-Scripts" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a id="welcome" class="anchor" href="#welcome" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome</h1>
+
+<p>Welcome to my repository of open source scripts for Arma!</p>
+
+<p>I've specifically designed these scripts to be as user-friendly to non-technical (non-programmer) players who just want things to work but don't have the time or knowledge to learn scripting and code.</p>
+
+<h2>
+<a id="what-are-scripts" class="anchor" href="#what-are-scripts" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What Are Scripts?</h2>
+
+<p>Scripts are little files of code run in-game that to do all sorts of wonderful and amazing things - or horrible things, depending on how you set it up (with great power comes great responsibility and all that).</p>
+
+<p>Scripts in Arma are typically either .sqs or .sqf files which can do any number of things, though there are also some more niche kinds of scripts like FSMs that define how AI units behave.</p>
+
+<p>However, the files themselves matter less than the actual code they contain, which can enable you to do all kinds of things you are otherwise totally unable to do in Arma.</p>
+
+<h2>
+<a id="how-do-i-use-scripts" class="anchor" href="#how-do-i-use-scripts" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How Do I Use Scripts?</h2>
+
+<h3>
+<a id="1-download-the-script" class="anchor" href="#1-download-the-script" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1. Download the Script</h3>
+
+<p>Firstly, you have to download the script you wish to use. Alternatively, you could make your own script, copy the code from my script, and paste it in yours.</p>
+
+<h3>
+<a id="2-place-the-script-in-your-mission-folder" class="anchor" href="#2-place-the-script-in-your-mission-folder" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2. Place the Script in Your Mission Folder</h3>
+
+<p>Secondly, you need to place the script in the mission folder of the mission you want to use it in, which will probably be in</p>
+
+<pre>C:\Users\YourUserName\Documents\Arma 3 - Other Profiles\YourProfileName\missions\YourMissionName</pre>
+
+<p>on Windows.</p>
+
+<h3>
+<a id="3-run-the-script" class="anchor" href="#3-run-the-script" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3. Run the Script</h3>
+
+<p>Thirdly, you need to execute the script by running code like this:</p>
+
+<p><code>scriptDone = [someArguments] execVM "someScript.sqf";</code></p>
+
+<p><code>scriptDone</code> is a variable used to determine whether or not the script has completed running. Almost always, you only have to write <code>null</code> for that and never think about it again.</p>
+
+<p><code>someArguments</code> is an array of parameters or settings you need to send to the script so it knows how to work and what to do. Arguments allow you to customize how the script works and what it does. However, every script is different and requires different arguments. Some require very complex arrays of arguments, others require none at all. All my scripts here come with thorough documentation explaining precisely what you need to write to make them work.</p>
+
+<p><code>execVM</code> is a scripting command to execute .sqf scripts, while <code>exec</code> is a command to execute .sqs scripts. Typically, you'll use <code>execVM</code> to run .sqf scripts, which have the unique and powerful ability to wait for something to happen before moving on.</p>
+
+<p><code>someScript.sqs</code> or <code>someScript.sqf</code> is the name of the script. Again, the script has to be in the mission folder of the mission you want to use it in.</p>
+
+<p>Again, all my scripts here come with thorough documentation explaining precisely what you need to write to make them work, so don't worry about it becoming too complicated, I'll make sure it's simple and easy.</p>
+
+<h2>
+<a id="example" class="anchor" href="#example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example</h2>
+
+<p>Let's say you want to enable the player to jump - something you can't do in vanilla Arma. Here's what you'd need to do:</p>
+
+<ol>
+<li>Download my EnableJump.sqf script.</li>
+<li>Put the EnableJump.sqf script in the mission folder of the mission you want to be able to jump in.</li>
+<li>Paste <code>null = execVM "EnableJump.sqf";</code> in the player's Init box (or anywhere, actually).</li>
+</ol>
+
+<p>It works! It's that easy.</p>
+
+<h2>
+<a id="is-this-code-licensed" class="anchor" href="#is-this-code-licensed" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Is this Code Licensed?</h2>
+
+<p>No. This code is not licensed. You may use this code freely and may copy, download, fork, and alter it freely. You don't have to cite me as a source, though I'd appreciate it.</p>
+        </section>
+
+        <footer>
+          Arma 3 Scripts is maintained by <a href="https://github.com/LeeCooper6">LeeCooper6</a><br>
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
