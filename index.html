@@ -34,7 +34,7 @@
           <h1>
 <a id="welcome" class="anchor" href="#welcome" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome</h1>
 
-<p>Welcome to my repository of open source scripts for Arma!</p>
+<p>Welcome to my repository of Arma scripts!</p>
 
 <p>I've specifically designed these scripts to be user-friendly to non-technical (non-programmer) players who just want things to work but don't have the time or knowledge to learn scripting and code.</p>
 
@@ -50,10 +50,14 @@
 <h2>
 <a id="how-do-i-use-scripts" class="anchor" href="#how-do-i-use-scripts" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How Do I Use Scripts?</h2>
 
+<p>Scripts may seem daunting and confusing at first, but they're easy to use in three simple steps.</p>
+
 <h3>
 <a id="1-download-the-script" class="anchor" href="#1-download-the-script" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1. Download the Script</h3>
 
-<p>Firstly, you have to download the script you wish to use. Alternatively, you could make your own script, copy the code from my script, and paste it in yours.</p>
+<p>Firstly, you have to <a href="https://github.com/LeeCooper6/Arma-Scripts/zipball/master">download the script</a> you wish to use.</p>
+
+<p>Alternatively, you could make your own script, <a href="https://github.com/LeeCooper6/Arma-Scripts">copy the code from my script</a>, and paste it in yours.</p>
 
 <h3>
 <a id="2-place-the-script-in-your-mission-folder" class="anchor" href="#2-place-the-script-in-your-mission-folder" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2. Place the Script in Your Mission Folder</h3>
@@ -62,8 +66,6 @@
 
 <pre>C:\Users\YourUserName\Documents\Arma 3 - Other Profiles\YourProfileName\missions\YourMissionName</pre>
 
-<p>on Windows.</p>
-
 <h3>
 <a id="3-run-the-script" class="anchor" href="#3-run-the-script" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3. Run the Script</h3>
 
@@ -71,15 +73,15 @@
 
 <p><code>scriptDone = [someArguments] execVM "someScript.sqf";</code></p>
 
-<p><code>scriptDone</code> is a variable used to determine whether or not the script has completed running. Almost always, you only have to write <code>null</code> for that and never think about it again.</p>
+<p><code>scriptDone</code> is a variable used to determine whether or not the script has completed running. Almost always, you only have to write <code>null</code> for that and never think about it.</p>
 
-<p><code>someArguments</code> is an array of parameters or settings you need to send to the script so it knows how to work and what to do. Arguments allow you to customize how the script works and what it does. However, every script is different and requires different arguments. Some require very complex arrays of arguments, others require none at all. All my scripts here come with thorough documentation explaining precisely what you need to write to make them work.</p>
+<p><code>someArguments</code> is an array of parameters or settings you need to send the script so it knows how to work and what to do. Arguments allow you to customize how the script works and what it does. However, every script is different and requires different arguments. Some require very complex arrays of arguments, others require none at all. All my scripts here come with <a href="https://github.com/LeeCooper6/Arma-Scripts/blob/master/README.md">thorough documentation</a> explaining precisely what you need to write to make them work.</p>
 
 <p><code>execVM</code> is a scripting command to execute .sqf scripts, while <code>exec</code> is a command to execute .sqs scripts. Typically, you'll use <code>execVM</code> to run .sqf scripts, which have the unique and powerful ability to wait for something to happen before moving on.</p>
 
 <p><code>someScript.sqs</code> or <code>someScript.sqf</code> is the name of the script. Again, the script has to be in the mission folder of the mission you want to use it in.</p>
 
-<p>Again, all my scripts here come with thorough documentation explaining precisely what you need to write to make them work, so don't worry about it becoming too complicated, I'll make sure it's simple and easy.</p>
+<p>Again, all my scripts here come with <a href="https://github.com/LeeCooper6/Arma-Scripts/blob/master/README.md">thorough documentation</a> explaining precisely what you need to write to make them work so it'll be simple and easy.</p>
 
 <h2>
 <a id="example" class="anchor" href="#example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example</h2>
@@ -87,7 +89,7 @@
 <p>Let's say you want to enable the player to jump - something you can't do in vanilla Arma. Here's what you'd need to do:</p>
 
 <ol>
-<li>Download my EnableJump.sqf script.</li>
+<li>Download the <a href="https://github.com/LeeCooper6/Arma-Scripts/blob/master/EnableJump.sqf">EnableJump.sqf script</a>.</li>
 <li>Put the EnableJump.sqf script in the mission folder of the mission you want to be able to jump in.</li>
 <li>Paste <code>null = execVM "EnableJump.sqf";</code> in the player's Init box (or anywhere, actually).</li>
 </ol>
@@ -98,6 +100,11 @@
 <a id="is-this-code-licensed" class="anchor" href="#is-this-code-licensed" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Is this Code Licensed?</h2>
 
 <p>No. This code is not licensed. You may use this code freely and may copy, download, fork, and alter it freely. You don't have to cite me as a source, though I'd appreciate it.</p>
+
+<h1>
+<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Documentation</h1>
+
+Here's the <a href="https://github.com/LeeCooper6/Arma-Scripts/blob/master/README.md">thorough documentation</a> explaining precisely what you need to write to make these scripts work.
         </section>
 
         <footer>
