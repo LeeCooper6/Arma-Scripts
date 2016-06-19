@@ -62,19 +62,19 @@ Execute the script with this syntax:
 
 <code>null = [UnitToApplyTo, [BleedLowerBound, BleedUpperBound, BleedSeconds], [HealLowerBound, HealUpperBound, HealSeconds]] execVM "AutoHealth.sqf";</code>
 
-    <code>UnitToApplyTo</code>:     The variable of the unit you wish to have bleed/heal.                                                   Example: <code>player</code> Result: Player automatically bleeds/heals.
+<code>UnitToApplyTo</code>:     The variable of the unit you wish to have bleed/heal.                                                   Example: <code>player</code> Result: Player automatically bleeds/heals.
 
-    <code>BleedLowerBound</code>:   The lowest float amount of health at which the unit will bleed.                                         Example: <code>0</code>         Result: Bleeds until 0% health.
+<code>BleedLowerBound</code>:   The lowest float amount of health at which the unit will bleed.                                         Example: <code>0</code>         Result: Bleeds until 0% health.
 
-    <code>BleedUpperBound</code>:   The highest float amount of health the unit will bleed from.                                            Example: <code>0.25</code>      Result: Begins bleeding when below 25% health.
+<code>BleedUpperBound</code>:   The highest float amount of health the unit will bleed from.                                            Example: <code>0.25</code>      Result: Begins bleeding when below 25% health.
 
-    <code>BleedSeconds</code>:      The maximum number of seconds for which the unit will bleed until hitting <code>BleedLowerBound</code>. Example: <code>60</code>        Result: Bleeds for up to 60 seconds (1 minute).
+<code>BleedSeconds</code>:      The maximum number of seconds for which the unit will bleed until hitting <code>BleedLowerBound</code>. Example: <code>60</code>        Result: Bleeds for up to 60 seconds (1 minute).
 
-    <code>HealLowerBound</code>:    The lowest float amount of health at which the unit will heal.                                          Example: <code>0.75</code>      Result: Begins healing at 75% health.
+<code>HealLowerBound</code>:    The lowest float amount of health at which the unit will heal.                                          Example: <code>0.75</code>      Result: Begins healing at 75% health.
 
-    <code>HealUpperBound</code>:    The highest float amount of health the unit will heal to.                                               Example: <code>1</code>         Result: Heals until 100% health.
+<code>HealUpperBound</code>:    The highest float amount of health the unit will heal to.                                               Example: <code>1</code>         Result: Heals until 100% health.
 
-    <code>HealSeconds</code>:       The maximum number of seconds for which the unit will heal until hitting <code>HealUpperBound</code>.   Example: <code>(60 * 3)</code>  Result: Heals for up to 180 seconds (3 minutes).
+<code>HealSeconds</code>:       The maximum number of seconds for which the unit will heal until hitting <code>HealUpperBound</code>.   Example: <code>(60 * 3)</code>  Result: Heals for up to 180 seconds (3 minutes).
 
 ### Example Settings
 
@@ -112,6 +112,22 @@ Remember that non-medic (Combat Lifesaver) units with First Aid Kits (FAKs) heal
 
 If you're a coder, you could re-implement this using <code>addMPEventHandler</code> to automatically run as soon as the unit is hit, instead of constantly polling the unit's health (which is obviously less efficient).
 
+## AutoSave.sqf
+
+Saves routinely every few minutes.
+
+### Arguments
+
+Execute the script with this syntax:
+
+<code>null = [MinutesBetweenSaves] execVM "AutoSave.sqf";</code>
+
+<code>MinutesBetweenSaves</code> The number of minutes to wait between each save.   Example: 10 Result: Saves every 10 minutes.
+
+### Tips
+
+In order to save, the game temporarily pauses on the server and all clients to save the state of everything without producing bizarre time-warping artifacts (no, I'm not exaggerating, it would literally warp in-game spacetime). On the server (if it is a player), the screen will display a filter with text saying something to the effect of "Saving game... please wait." However, on other clients, the game simply stops and displays no text, so most players perceive this to be an unwanted moment of severe "lag" and will tell you so when it is actually an intentional pause in order to save the game. Still, it provides a poor user experience, so it's best to minimize the amount of unnecessary saving in order to minimize the number of pauses which will be perceived as "lag spikes."
+
 ## DisablePlayableAI.sqf
 
 Fully disables an AI unit.
@@ -122,7 +138,7 @@ Execute the script with this syntax:
 
 <code>null = [UnitToApplyTo] execVM "DisablePlayableAI.sqf";</code>
 
-    <code>UnitToApplyTo</code>: The AI unit you want to disable. Has no effect on players.
+<code>UnitToApplyTo</code>: The AI unit you want to disable. Has no effect on players.
 
 ### Tips
 
@@ -174,13 +190,13 @@ Execute the script with this syntax:
 
 <code>null = [UnitToApplyTo, [SituationalAwarenessSkillLevel, WeaponSkillLevel, TeamworkSkillLevel]] execVM "SetAISkill.sqf";</code>
 
-    <code>UnitToApplyTo</code>:                     The variable of the AI unit whose skill level you want to set.                                                          Example: Unit1  Result: Sets Unit1's skills.
+<code>UnitToApplyTo</code>:                     The variable of the AI unit whose skill level you want to set.                                                          Example: Unit1  Result: Sets Unit1's skills.
 
-    <code>SituationalAwarenessSkillLevel</code>:    The float skill level of how far and fast the unit can spot enemies.                                                    Example: 0.50   Result: 50% situational awareness skills.
+<code>SituationalAwarenessSkillLevel</code>:    The float skill level of how far and fast the unit can spot enemies.                                                    Example: 0.50   Result: 50% situational awareness skills.
 
-    <code>WeaponSkillLevel</code>:                  The float skill level of how fast and accurately the unit can shoot, how much its hands shake, and how fast it reloads. Example: 0.25   Result: 25% weapon skills.
+<code>WeaponSkillLevel</code>:                  The float skill level of how fast and accurately the unit can shoot, how much its hands shake, and how fast it reloads. Example: 0.25   Result: 25% weapon skills.
 
-    <code>TeamWorkSkillLevel</code>:                The float skill level of how fast and accurately the unit communicates enemy positions, and how often the unit flees.   Example: 0.33   Result: 33% teamwork skills.
+<code>TeamWorkSkillLevel</code>:                The float skill level of how fast and accurately the unit communicates enemy positions, and how often the unit flees.   Example: 0.33   Result: 33% teamwork skills.
 
 The highest possible skill level is 1 (100%) while the lowest possible skill level is 0 (0%).
 
@@ -202,7 +218,7 @@ Execute the script with this syntax:
 
 <code>null = [UnitToApplyTo] execVM "ToggleGodMode.sqf";</code>
 
-    <code>UnitToApplyTo</code>: The unit you wish to toggle the god mode of.    Example: player Result: Toggles the god mode of the (client-side) player.
+<code>UnitToApplyTo</code>: The unit you wish to toggle the god mode of.    Example: player Result: Toggles the god mode of the (client-side) player.
 
 ### Tips
 
@@ -216,3 +232,4 @@ This works really well for a "drill instructor" player whose only purpose is to 
 * Update, rename, refactor, document, & upload spawnEnemyWaves.sqf & spawnMarkerTracker.sqf.
 * Make SpawnAIGroup.sqf, a simpler 1-wave version of spawnEnemyWaves.sqf.
 * Re-implement AutoHealth.sqf with <code>addMPEventHandler</code>
+* Remove the <code> tags in this readme.
